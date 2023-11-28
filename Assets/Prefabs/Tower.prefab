@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4130149729791881559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4130149729791881642}
+  - component: {fileID: 4130149729791881557}
+  - component: {fileID: 4130149729791881556}
+  m_Layer: 0
+  m_Name: Tower
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4130149729791881642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130149729791881559}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4130149729791881557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130149729791881559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4dd5853d240f15e44b072c8e02b6b389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _humansTemplates:
+  - {fileID: 3197534179828345430, guid: 56483283cd4335744bbeae62e3f92602, type: 3}
+  - {fileID: -4913228771818028715, guid: d69a6d7d74360eb488ccb32be5a4200e, type: 3}
+  - {fileID: -7403258222773942276, guid: b09db5dc5025ca34a9c1d77818bad74a, type: 3}
+  - {fileID: -3031674518461489333, guid: 4035a430832188d40a39f9950623c0e9, type: 3}
+  _minHumanInTower: 2
+  _maxHumanInTower: 6
+--- !u!114 &4130149729791881556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4130149729791881559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ad16de2d922fc244bdf147a96731854, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

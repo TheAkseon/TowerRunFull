@@ -192,6 +192,7 @@ GameObject:
   - component: {fileID: 632185328}
   - component: {fileID: 632185327}
   - component: {fileID: 632185326}
+  - component: {fileID: 632185330}
   m_Layer: 0
   m_Name: Road Mesh Holder
   m_TagString: Untagged
@@ -280,6 +281,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &632185330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 632185325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f4d154437c23364dadfd4474f0eae1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -654,6 +667,7 @@ GameObject:
   - component: {fileID: 1710106042}
   - component: {fileID: 1710106041}
   - component: {fileID: 1710106043}
+  - component: {fileID: 1710106044}
   m_Layer: 0
   m_Name: PlayerTower
   m_TagString: Untagged
@@ -720,6 +734,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.35628137, y: 0.23601638, z: 0.28292608}
   m_Center: {x: -0.015393481, y: 0.12371939, z: 0.035887897}
+--- !u!114 &1710106044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1710106039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e41bb9a6f471d314e896e63e103574a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpForce: 5
 --- !u!1 &1758953482
 GameObject:
   m_ObjectHideFlags: 0
