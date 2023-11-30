@@ -31,7 +31,7 @@ public class TowerBuilder : MonoBehaviour
     private Human BuildHuman()
     {
         Human newHuman = Instantiate(_humansTemplates[Random.Range(0, _humansTemplates.Length)], _currentSpawnPoint, 
-            Quaternion.identity, transform);
+            transform.rotation, transform);
         _currentSpawnPoint = newHuman.FixationPoint.transform.position;
 
         return newHuman;
