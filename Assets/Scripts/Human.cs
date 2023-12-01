@@ -14,6 +14,7 @@ public class Human : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
     }
+
     private void Texting()
     {
         _animator.SetBool("isTexting", true);

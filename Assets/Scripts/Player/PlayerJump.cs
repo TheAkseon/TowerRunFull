@@ -8,10 +8,12 @@ public class PlayerJump : MonoBehaviour
 
     private Rigidbody _rigidbody;
     private bool _isGrounded;
+    private float _baseJumpForce;
 
     private void Start()
     {
         _rigidbody = GetComponent<Rigidbody>();
+        _baseJumpForce = _jumpForce;
     }
 
     private void Update()
@@ -33,6 +35,33 @@ public class PlayerJump : MonoBehaviour
         {
             _rigidbody.AddForce(Vector3.up * _jumpForce, ForceMode.Impulse);
             _isGrounded = false;
+        }
+    }
+
+    private void BoostJump(float jumpMultiplyer)
+    {
+        _jumpForce *= jumpMultiplyer;
+    }
+
+    private void ResetJumpBoost()
+    {
+
+        _jumpForce = _baseJumpForce;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.TryGetComponent(out JumpBooster jumpBooster))
+        {
+            BoostJump(jumpBooster.JumpBoostMultiplayer);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out JumpBooster jumpBooster))
+        {
+            ResetJumpBoost();
         }
     }
 }
