@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class TowerBuilder : MonoBehaviour
 {
@@ -25,6 +27,8 @@ public class TowerBuilder : MonoBehaviour
             humansInTower.Add(newHuman);
         }
 
+        SetHumanAnimation(humansInTower);
+
         return humansInTower;
     }
 
@@ -35,5 +39,20 @@ public class TowerBuilder : MonoBehaviour
         _currentSpawnPoint = newHuman.FixationPoint.transform.position;
 
         return newHuman;
+    }
+
+    private void SetHumanAnimation(List<Human> humansInTower)
+    {
+        bool isAnimated;
+
+        for (int i = 0; i < humansInTower.Count; i++)
+        {
+            isAnimated = Convert.ToBoolean(Random.Range(0, 2));
+
+            if (isAnimated)
+            {
+                humansInTower[i].SetRandomAnimation();
+            }
+        }
     }
 }

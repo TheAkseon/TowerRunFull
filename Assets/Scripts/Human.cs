@@ -14,6 +14,20 @@ public class Human : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
     }
+    private void Texting()
+    {
+        _animator.SetBool("isTexting", true);
+    }
+
+    private void Kicking()
+    {
+        _animator.SetBool("isKicking", true);
+    }
+
+    private void Waving()
+    {
+        _animator.SetBool("isWaving", true);
+    }
 
     public void Bounce()
     {
@@ -40,4 +54,23 @@ public class Human : MonoBehaviour
     {
         _animator.SetBool("isRunning", false);
     }
+
+    public void SetRandomAnimation()
+    {
+        int numberAnimation = Random.Range(1, 4);
+
+        switch (numberAnimation)
+        {
+            case 1:
+                Texting();
+                break;
+            case 2:
+                Kicking();
+                break;
+            case 3:
+                Waving();
+                break;
+        }
+    }
+
 }

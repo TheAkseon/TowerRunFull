@@ -478,7 +478,7 @@ MonoBehaviour:
   _playerTower: {fileID: 1710106045}
   _offsetPosition: {x: -3.5, y: 2.5, z: -3}
   _offsetRotation: {x: 0, y: 1, z: 0}
-  _distanceDelta: 0.5
+  _distanceDelta: 3
 --- !u!1 &1710106039
 GameObject:
   m_ObjectHideFlags: 0
