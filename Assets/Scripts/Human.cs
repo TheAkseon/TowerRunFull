@@ -9,7 +9,7 @@ public class Human : MonoBehaviour
     private Animator _animator;
     public Transform FixationPoint => _fixationPoint;
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
         _rigidbody = GetComponent<Rigidbody>();
@@ -29,5 +29,15 @@ public class Human : MonoBehaviour
         _rigidbody.AddExplosionForce(explosionForce, explosionPosition, explosionRadius);
 
         Destroy(gameObject, 2f);
+    }
+
+    public void Run()
+    {
+        _animator.SetBool("isRunning", true);
+    }
+
+    public void StopRun()
+    {
+        _animator.SetBool("isRunning", false);
     }
 }

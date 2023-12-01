@@ -11,15 +11,20 @@ public class PlayerTower : MonoBehaviour
     {
         _towerBuilder = GetComponent<TowerBuilder>();
         _humansInTower = _towerBuilder.Build();
+        _humansInTower[0].Run();
     }
 
     public void AddNewHumans(List<Human> newHumans)
     {
+        _humansInTower[0].StopRun();
+
         for (int i = 0; i < newHumans.Count; i++)
         {
             _humansInTower.Insert(i, newHumans[i]);
             _humansInTower[i].transform.parent = transform;
         }
+
+        _humansInTower[0].Run();
 
         SetHumansPosition();
     }
