@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(TowerBuilder))]
 public class PlayerTower : MonoBehaviour
 {
     private TowerBuilder _towerBuilder;
     private List<Human> _humansInTower;
+
+    public UnityAction<int> HumanAdded;
 
     private void Start()
     {
@@ -27,6 +30,8 @@ public class PlayerTower : MonoBehaviour
         _humansInTower[0].Run();
 
         SetHumansPosition();
+
+        HumanAdded?.Invoke(newHumans.Count);
     }
 
     private void SetHumansPosition()
