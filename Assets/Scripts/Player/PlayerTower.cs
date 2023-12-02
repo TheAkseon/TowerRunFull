@@ -9,6 +9,7 @@ public class PlayerTower : MonoBehaviour
     private List<Human> _humansInTower;
 
     public UnityAction<int> HumanAdded;
+    public UnityAction<int> HumanDeleted;
 
     private void Start()
     {
@@ -44,5 +45,30 @@ public class PlayerTower : MonoBehaviour
             currentHumanPosition = _humansInTower[i].FixationPoint.transform.position;
             _humansInTower[i].transform.rotation = transform.rotation;
         }
+    }
+
+    public void DeleteHumans(int countDeleteHumans)
+    {
+        if(countDeleteHumans >= _humansInTower.Count)
+        {
+            SceneRestarter sceneRestarter = FindObjectOfType<SceneRestarter>();
+            sceneRestarter.Restart();
+            return;
+        }
+
+        _humansInTower[0].StopRun();
+
+        for (int i = 0; i < countDeleteHumans; i++)
+        {
+            _humansInTower[i].transform.parent = null;
+            Destroy(_humansInTower[i].gameObject);
+            _humansInTower.RemoveAt(i);
+        }
+
+        _humansInTower[0].Run();
+
+        SetHumansPosition();
+
+        HumanDeleted?.Invoke(countDeleteHumans);
     }
 }

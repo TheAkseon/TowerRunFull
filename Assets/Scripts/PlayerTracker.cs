@@ -33,15 +33,22 @@ public class PlayerTracker : MonoBehaviour
     private void OnEnable()
     {
         _playerTower.HumanAdded += OnHumanAdded;
+        _playerTower.HumanDeleted += OnHumanDeleted;
     }
 
     private void OnDisable()
     {
         _playerTower.HumanAdded -= OnHumanAdded;
+        _playerTower.HumanDeleted -= OnHumanDeleted;
     }
 
-    private void OnHumanAdded(int countHumans)
+    private void OnHumanAdded(int countAddedHumans)
     {
-        _targetOffsetPosition = _offsetPosition + (Vector3.up + Vector3.left) * countHumans;
+        _targetOffsetPosition = _offsetPosition + (Vector3.up + Vector3.left) * countAddedHumans;
+    }
+
+    private void OnHumanDeleted(int countDeleteHumans)
+    {
+        _targetOffsetPosition = _offsetPosition - (Vector3.up + Vector3.left) * countDeleteHumans;
     }
 }
